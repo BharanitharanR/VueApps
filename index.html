@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <link rel="stylesheet" href="./styles/main.css">
+    </head>
+    <body>
+        <H1>Learn Vue</H1>
+        <div id="app">
+            <div>
+                <div class="heading" v-if="showBooks">
+                    <H2>{{ title }} - {{ author }} - {{ age }}</H2>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" @click="toggleBooks">
+                    <span class="slider round"></span>
+                  </label>
+            </div>            
+            <div class="box" v-if="showBooks">
+            
+            <button @click="changeTheBook(title)">
+                <span v-if="fanFavorite" >Explore the fan favourite book {{ title }}</span>
+                <span v-if="!fanFavorite">Explore the book {{ title }}</span>
+            </button>
+        </div>
+            <br>
+
+        </div>
+        <script src="./modules/app.js"></script>
+    </body>
+</html>
