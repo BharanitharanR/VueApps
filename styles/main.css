@@ -68,3 +68,29 @@ border-radius: 34px;
 .slider.round:before {
 border-radius: 50%;
 }        
+
+.bookIcon {
+    padding: 1px 0;
+    width: 100px;
+    text-align: center;
+    background: #ddd;
+    margin: 20px;
+    display: inline-block;
+}
+li{
+    list-style-type: none;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+H3,ul,p{
+    margin: 0;
+    padding: 0;
+}
+
+li.fav{
+    background-color: #d2df9a
+}

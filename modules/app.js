@@ -9,9 +9,9 @@ const app = Vue.createApp({
         eventType: null,
         coordinatesX: 0,
         coordinatesY: 0,
-        books: [{title: "Mahabaratham",author:" Veda Vyasar",age:909309090909090,icon: "./assets/png"},
-                {title: "Ramayanam",author:" Valmiki",age:100000000000000000000, fanFavouriye: true,icon: "./assets/.png"},
-                {title: "Bagavad Gita",author:" Bagavan Krishnar",age:909309090909090,icon: "./assets/.png"}
+        books: [{title: "Mahabaratham",author:" Veda Vyasar",age:909309090909090,icon: "./assets/Mahabaratham.png"},
+                {title: "Ramayanam",author:" Valmiki",age:100000000000000000000, fanFavourite: true,icon: "./assets/Ramayanam.png"},
+                {title: "Bagavad Gita",author:" Bagavan Krishnar",age:909309090909090,fanFavourite: true,icon: "./assets/Mahabaratham.png"}
              ],
         showBooks: false
         }
@@ -51,6 +51,15 @@ const app = Vue.createApp({
                 this.coordinatesX = e.clientX;
                 this.coordinatesY = e.clientY;
             }
+        },
+        toggleFav(book)
+        {
+           book.fanFavourite = !book.fanFavourite;
+        }
+    },
+    computed: {
+        filterFavouriteBooks() {
+            return this.books.filter((book) => book.fanFavourite)
         }
     }
     

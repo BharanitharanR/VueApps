@@ -15,15 +15,19 @@
                         <span class="slider round"></span>
                     </label>
                 </div>  
-                <li v-for="book in books">
-                    <img :src="book."
-                    <H2>{{ book.title }} - {{ book.author }} - {{ book.age }}</H2>
+                <li v-for="book in filterFavouriteBooks" v-if="showBooks" :class="{fav : book.fanFavourite }" @click="toggleFav(book)">
+                        <img class="bookIcon" :src="book.icon" :alt="book.title">
+                        <H2>{{ book.title }}</H2>
+                        <H3>{{ book.author }}</H3>
+                        <p>{{ book.age }}</p>
                 </li>
             <div class="box" v-if="showBooks">
-            <button @click="changeTheBook(title)">
-                <span v-if="fanFavorite" >Explore the fan favourite book {{ title }}</span>
-                <span v-if="!fanFavorite">Explore the book {{ title }}</span>
+            <li v-for="book in books" v-if="showBooks"  >
+            <button @click="changeTheBook(book)">
+                <span v-if="book.fanFavourite" >Explore the fan favourite book {{ book.title }}</span>
+                <span v-if="!book.fanFavourite">Explore the book {{ book.title }}</span>
             </button>
+            </li>
         </div>
             <br>
 
